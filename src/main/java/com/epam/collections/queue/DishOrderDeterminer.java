@@ -11,14 +11,12 @@ public class DishOrderDeterminer {
             list.add(i+1);
         }
         int numberOfIteration = 1;
-        while (list.size() > 0) {
+        while (!list.isEmpty()) {
             for (int i = 0; i < list.size(); i++) {
                 if (numberOfIteration == everyDishNumberToEat) {
                     finalList.add(list.get(i));
-                    System.out.println(finalList);
                     list.remove(i);
                     i--;
-                    System.out.println(list);
                 }
                 numberOfIteration++;
                 if (numberOfIteration > everyDishNumberToEat) {
