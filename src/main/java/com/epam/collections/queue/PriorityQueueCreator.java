@@ -10,7 +10,9 @@ public class PriorityQueueCreator {
         PriorityQueue<String> queue = new PriorityQueue<>(Comparator.reverseOrder());
         firstList.addAll(secondList);
         firstList.sort(Collections.reverseOrder());
-        queue.addAll(firstList);
+        for (String s : firstList) {
+            queue.add(s);
+        }
         return queue;
     }
 }
