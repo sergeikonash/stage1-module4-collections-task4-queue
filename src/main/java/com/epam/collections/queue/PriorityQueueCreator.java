@@ -8,13 +8,9 @@ import java.util.PriorityQueue;
 public class PriorityQueueCreator {
     public PriorityQueue<String> createPriorityQueue(List<String> firstList, List<String> secondList) {
         PriorityQueue<String> queue = new PriorityQueue<>(Comparator.reverseOrder());
-        for (String s : secondList) {
-            firstList.add(s);
-        }
+        firstList.addAll(secondList);
         firstList.sort(Collections.reverseOrder());
-        for (String s : firstList) {
-            queue.add(s);
-        }
+        queue.addAll(firstList);
         return queue;
     }
 }
